@@ -8,11 +8,12 @@
 # WARNING! All changes made in this file will be lost!
 
 from PySide import QtCore, QtGui
+from PySide.QtWebKit import QWebView
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(851, 558)
+        MainWindow.resize(1300, 700)
         self.centralwidget = QtGui.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout_2 = QtGui.QGridLayout(self.centralwidget)
@@ -36,10 +37,9 @@ class Ui_MainWindow(object):
         self.tab_3.setObjectName("tab_3")
         self.gridLayout_3 = QtGui.QGridLayout(self.tab_3)
         self.gridLayout_3.setObjectName("gridLayout_3")
-        self.verticalScrollBar_2 = QtGui.QScrollBar(self.tab_3)
-        self.verticalScrollBar_2.setOrientation(QtCore.Qt.Vertical)
-        self.verticalScrollBar_2.setObjectName("verticalScrollBar_2")
-        self.gridLayout_3.addWidget(self.verticalScrollBar_2, 0, 1, 1, 1)
+        self.qwebview = QWebView(self.tab_3)
+        self.qwebview.setObjectName("qwebview")
+        self.gridLayout_3.addWidget(self.qwebview, 0, 0, 1, 1)
         self.View.addTab(self.tab_3, "")
         self.tab_4 = QtGui.QWidget()
         self.tab_4.setObjectName("tab_4")
