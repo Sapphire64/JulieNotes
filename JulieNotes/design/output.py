@@ -4,11 +4,11 @@
 #
 # Created: Tue Oct 23 00:57:18 2012
 #      by: pyside-uic 0.2.13 running on PySide 1.1.1
-#
-# WARNING! All changes made in this file will be lost!
+
 
 from PySide import QtCore, QtGui
 from PySide.QtWebKit import QWebView
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -48,10 +48,6 @@ class Ui_MainWindow(object):
         self.textEdit = QtGui.QTextEdit(self.tab_4)
         self.textEdit.setObjectName("textEdit")
         self.gridLayout_4.addWidget(self.textEdit, 0, 0, 1, 1)
-        self.verticalScrollBar = QtGui.QScrollBar(self.tab_4)
-        self.verticalScrollBar.setOrientation(QtCore.Qt.Vertical)
-        self.verticalScrollBar.setObjectName("verticalScrollBar")
-        self.gridLayout_4.addWidget(self.verticalScrollBar, 0, 1, 1, 1)
         self.View.addTab(self.tab_4, "")
         self.gridLayout.addWidget(self.View, 0, 2, 1, 1)
         self.FilesList = QtGui.QListWidget(self.centralwidget)
@@ -100,7 +96,7 @@ class Ui_MainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QtGui.QApplication.translate("MainWindow", "Julie Notes", None, QtGui.QApplication.UnicodeUTF8))
+        MainWindow.setWindowTitle(QtGui.QApplication.translate("MainWindow", "Julie Notes v0.5a", None, QtGui.QApplication.UnicodeUTF8))
         self.View.setTabText(self.View.indexOf(self.tab_3), QtGui.QApplication.translate("MainWindow", "View", None, QtGui.QApplication.UnicodeUTF8))
         self.View.setTabText(self.View.indexOf(self.tab_4), QtGui.QApplication.translate("MainWindow", "Edit", None, QtGui.QApplication.UnicodeUTF8))
         self.menuFile.setTitle(QtGui.QApplication.translate("MainWindow", "File", None, QtGui.QApplication.UnicodeUTF8))
