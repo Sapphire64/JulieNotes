@@ -22,3 +22,4 @@ There are many things to do:
  4. SQLite3 DB for notes storage
  5. Backups, migration etc.
  6. Syntax check
+ 7. Custom CSS template
