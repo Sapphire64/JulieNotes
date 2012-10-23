@@ -6,12 +6,12 @@ Installation
 =============
 In Debian-based distribution use next command to prepare your workspace:
 
- ```aptitude install python3-docutils python3-pyside```
+ ``aptitude install python3-docutils python3-pyside``
 
 
 Then just simply run this program using:
 
- ```python3 /path/to/JulieNotes/main.py```
+ ``python3 /path/to/JulieNotes/main.py``
 
 TODO
 =============
