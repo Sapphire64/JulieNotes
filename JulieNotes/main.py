@@ -4,7 +4,7 @@ from JulieNotes.design.output import Ui_MainWindow
 from PySide import QtCore, QtGui
 
 import sys
-import markdown2
+from JulieNotes.restructedText import reST_to_html
 
 class MainWindow(QtGui.QMainWindow):
 
@@ -15,7 +15,7 @@ class MainWindow(QtGui.QMainWindow):
         self.__handle_events()
 
         # Debug:
-        with open('../EXAMPLE.md', 'r') as f:
+        with open('../EXAMPLE.rst', 'r') as f:
             text = f.read()
         self.ui.textEdit.setText(text)
 
@@ -34,8 +34,8 @@ class MainWindow(QtGui.QMainWindow):
         self.ui.View.findChild(QTabBar).currentChanged.connect(self._tab_pressed)
 
     def _render_text(self, text):
-        render = markdown2.markdown(text)
-        with open('./core/rendered_file.html', 'w') as f:
+        render = reST_to_html(text)
+        with open('./core/rendered_file.html', 'wb') as f:
             f.write(render)
 
     def show_in_browser(self, text):
