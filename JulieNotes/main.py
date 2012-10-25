@@ -1,10 +1,15 @@
-from PySide.QtCore import QUrl, QAbstractTableModel, Qt
-from PySide.QtGui import QTabBar, QFileDialog
-from JulieNotes.design.output import Ui_MainWindow
+from PySide.QtCore import QUrl
+from PySide.QtGui import QTabBar
 from PySide import QtCore, QtGui
 
+from core.restructedText import reST_to_html
+from design.output import Ui_MainWindow
+
 import sys
-from JulieNotes.core.restructedText import reST_to_html
+import os
+
+PATH = os.path.abspath(os.path.dirname(sys.argv[0])) # Determining project path
+
 
 class MainWindow(QtGui.QMainWindow):
 
@@ -29,7 +34,7 @@ class MainWindow(QtGui.QMainWindow):
         self.ui.TableView.setModel(table_model)
 
         # Debug:
-        with open('../EXAMPLE.rst', 'r') as f:
+        with open(PATH + '/../EXAMPLE.rst', 'r') as f:
             text = f.read()
         self.ui.textEdit.setText(text)
 
@@ -79,12 +84,12 @@ class MainWindow(QtGui.QMainWindow):
 
     def _render_text(self, text):
         render = reST_to_html(text)
-        with open('./core/template/rendered_file.html', 'wb') as f:
+        with open(PATH + '/./core/template/rendered_file.html', 'wb') as f:
             f.write(render)
 
     def show_in_browser(self, text):
         self._render_text(text)
-        self.ui.qwebview.load(QUrl("./core/template/rendered_file.html"))
+        self.ui.qwebview.load(QUrl(PATH + "/./core/template/rendered_file.html"))
         self.ui.qwebview.show()
 
     def keyPressEvent(self, event):
