@@ -1,5 +1,5 @@
-from PySide.QtCore import QUrl
-from PySide.QtGui import QTabBar
+from PySide.QtCore import QUrl, QAbstractTableModel, Qt
+from PySide.QtGui import QTabBar, QFileDialog
 from PySide import QtCore, QtGui
 
 from core.restructedText import reST_to_html
